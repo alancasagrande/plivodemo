@@ -16,6 +16,8 @@ app.get('/hangup', (req, res) => {
     res.status(200).end()
 });
 
-app.listen(5005, '0.0.0.0', () => {
-    console.log('Listening at 0.0.0.0:5005');
+const port = process.env.PORT || '5005';
+const host = process.env.HOST || 'localhost';
+app.listen(port, host, () => {
+    console.log(`Listening at ${host}:${port}`);
 });
